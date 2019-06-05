@@ -14,7 +14,9 @@ print("User chose:",user_choice)
 
 #validate input
 
-if user_choice not in["rock","paper","scissors"]:     
+options = ["rock","paper","scissors"]
+
+if user_choice not in options:     
     print("Invalid Selection Please Try Again")
     exit()
 
@@ -27,6 +29,8 @@ print("--------")
 print("Computer Choice:", computer_choice)
 
 #determing the winner
+
+
 
 #display final outputs/outcomes 
 
