@@ -58,67 +58,74 @@
 
 import random
 
-print("Rock, Paper, Scissors, Shoot!") # this is also a comment
+def my_message():
+    return "Hello"
 
-# CAPTURE INPUTS
+x = my_message
 
-user_choice = input("Please choose one of the following options: 'rock', 'paper', or 'scissors' (without the quotes):")
+if __name__ == "__main__":
 
-print("--------------")
-print("USER CHOICE:", user_choice)
+    print("Rock, Paper, Scissors, Shoot!") # this is also a comment
 
-# VALIDATE INPUTS
+    # CAPTURE INPUTS
 
-options = ["rock", "paper", "scissors"]
+    user_choice = input("Please choose one of the following options: 'rock', 'paper', or 'scissors' (without the quotes):")
 
-if user_choice not in options:
-    print("INVALID SELECTION, PLEASE TRY AGAIN...")
-    exit()
+    print("--------------")
+    print("USER CHOICE:", user_choice)
 
-# GENERATE COMPUTER SELECTION
+    # VALIDATE INPUTS
 
-computer_choice = random.choice(options)
+    options = ["rock", "paper", "scissors"]
 
-print("--------------")
-print("GENERATING...")
-print("COMPUTER CHOICE:", computer_choice)
+    if user_choice not in options:
+        print("INVALID SELECTION, PLEASE TRY AGAIN...")
+        exit()
 
-# DETERMINE THE WINNER
-#
-# rock beats scissors
-# paper beats rock
-# scissors beats paper
-# same selections is a tie
-#
-# first attribute represents the user, second represents the computer
-winners = {
-    "rock":{
-        "rock": None,
-        "paper": "paper",
-        "scissors": "rock",
-    },
-    "paper":{
-        "rock": "paper",
-        "paper": None,
-        "scissors": "scissors",
-    },
-    "scissors":{
-        "rock": "rock",
-        "paper": "scissors",
-        "scissors": None,
-    },
-}
+    # GENERATE COMPUTER SELECTION
 
-winning_choice = winners[user_choice][computer_choice]
+    computer_choice = random.choice(options)
 
-# DISPLAY FINAL OUTPUTS / OUTCOMES
+    print("--------------")
+    print("GENERATING...")
+    print("COMPUTER CHOICE:", computer_choice)
 
-if winning_choice:
-    if winning_choice == user_choice:
-        print("YOU WON")
-    elif winning_choice == computer_choice:
-        print("YOU LOST")
-else:
-    print("TIE")
+    # DETERMINE THE WINNER
+    #
+    # rock beats scissors
+    # paper beats rock
+    # scissors beats paper
+    # same selections is a tie
+    #
+    # first attribute represents the user, second represents the computer
+    winners = {
+        "rock":{
+            "rock": None,
+            "paper": "paper",
+            "scissors": "rock",
+        },
+        "paper":{
+            "rock": "paper",
+            "paper": None,
+            "scissors": "scissors",
+        },
+        "scissors":{
+            "rock": "rock",
+            "paper": "scissors",
+            "scissors": None,
+        },
+    }
 
-print("Thanks for playing. Please play again!")
+    winning_choice = winners[user_choice][computer_choice]
+
+    # DISPLAY FINAL OUTPUTS / OUTCOMES
+
+    if winning_choice:
+        if winning_choice == user_choice:
+            print("YOU WON")
+        elif winning_choice == computer_choice:
+            print("YOU LOST")
+    else:
+        print("TIE")
+
+    print("Thanks for playing. Please play again!")
